@@ -7,3 +7,5 @@ In this example resources are stored under the Flask ```instance_path``` folder.
 Don't forget to set the Flask ```instance_path``` particular to your set-up, for example :
 
 ```app = Flask(__name__, instance_path='D:/Paul/Documents/GitHub/flask-protected-resource/instance')```
+
+A user with email ```jane.smith@example.com``` and password ```password``` is created in the ```before_first_request``` event.
