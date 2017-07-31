@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p>This is an unprotected page with a protected resource (image). If you are logged in you will see an image below.</p>
+    <img src="{{ url_for('resource_image', filename='black.jpg') }}">
+
+    <div style="padding:20px; height: 560px; width: 760px;background:url('{{ url_for('resource_image', filename='background.png') }}')">
+        <p>If you are logged in you will see this paragraph is in a <code>div</code> that has a protected <code>background:url</code></p>
+    </div>
+{% endblock content %}

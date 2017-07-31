@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Protected Resources</title>
+</head>
+<body>
+
+{% block header %}
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="{{ url_for('protected') }}">Protected</a></li>
+        <li><a href="{{ url_for('unprotected') }}">Unprotected</a></li>
+
+        {% if current_user.is_authenticated %}
+            <li>{{ current_user.username }} <a href="{{ url_for('security.logout') }}">Logout</a></li>
+        {% else %}
+            <li><a href="{{ url_for('security.login') }}">Login</a></li>
+        {% endif %}
+
+    </ul>
+
+{% endblock header %}
+
+{% block content %}
+{% endblock content %}
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p>This is a protected page with a protected resource (image).</p>
+    <img src="{{ url_for('resource_image', filename='black.jpg') }}">
+{% endblock content %}
